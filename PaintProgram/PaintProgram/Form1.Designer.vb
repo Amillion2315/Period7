@@ -38,6 +38,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,7 +89,7 @@ Partial Class Form1
         Me.CheckedListBox1.Items.AddRange(New Object() {"Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Indigo", "Violet"})
         Me.CheckedListBox1.Location = New System.Drawing.Point(12, 205)
         Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(123, 109)
+        Me.CheckedListBox1.Size = New System.Drawing.Size(123, 94)
         Me.CheckedListBox1.TabIndex = 4
         '
         'CheckedListBox2
@@ -108,7 +109,7 @@ Partial Class Form1
         Me.CheckedListBox3.Items.AddRange(New Object() {"Round", "Liner", "Wash", "Angular", "Fan"})
         Me.CheckedListBox3.Location = New System.Drawing.Point(668, 99)
         Me.CheckedListBox3.Name = "CheckedListBox3"
-        Me.CheckedListBox3.Size = New System.Drawing.Size(120, 124)
+        Me.CheckedListBox3.Size = New System.Drawing.Size(120, 112)
         Me.CheckedListBox3.TabIndex = 6
         '
         'NumericUpDown1
@@ -202,11 +203,21 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(376, 326)
         Me.Panel1.TabIndex = 15
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(410, 67)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 16
+        Me.Button5.Text = "Button5"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 553)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -247,4 +258,5 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button5 As Button
 End Class
