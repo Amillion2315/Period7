@@ -11,7 +11,7 @@
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
-            Dim l As New Square(PictureBox1.Image, m_Previous, e.Location)
+            Dim l As New Circle(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
             l.w = TrackBar2.Value
             l.h = TrackBar3.Value
