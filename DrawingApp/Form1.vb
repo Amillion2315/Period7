@@ -11,14 +11,27 @@
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
-            Dim l As New Circle(PictureBox1.Image, m_Previous, e.Location)
-            l.Pen = New Pen(c, w)
-            l.w = TrackBar2.Value
-            l.h = TrackBar3.Value
-            m_shapes.Add(l)
+            Dim d As Object
+            If Type = "Rectangle" Then
+                d = New Square(PictureBox1.Image, m_Previous, e.Location)
+                d.pen = New Pen(c, w)
+            End If
+            If Type = "Circle" Then
+                d = New Circle(PictureBox1.Image, m_Previous, e.Location)
+                d.pen = New Pen(c, w)
+            End If
+            If Type = "Arc" Then
+                d = New Arc(PictureBox1.Image, m_Previous, e.Location)
+                d.pen = New Pen(c, w)
+            End If
+            m_shapes.Add(d)
             PictureBox1.Invalidate()
             m_Previous = e.Location
         End If
+        'Dim l As New Circle(PictureBox1.Image, m_Previous, e.Location)
+        'l.Pen = New Pen(c, w)
+        'l.w = TrackBar2.Value
+        'l.h = TrackBar3.Value
     End Sub
 
     Private Sub pictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
@@ -99,4 +112,19 @@
 
     End Sub
 
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Type = "Rectangle"
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Type = "Circle"
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        Type = "Arc"
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        Type = "Line"
+    End Sub
 End Class

@@ -1,7 +1,5 @@
-﻿Public Class Circle
+﻿Public Class Arc
     Public Property Pen As Pen
-    Public Property w As Integer
-    Public Property h As Integer
 
     Dim m_image As Image
     Dim m_a As Point
@@ -15,7 +13,10 @@
     End Sub
     Public Sub Draw()
         Using g As Graphics = Graphics.FromImage(m_image)
-            g.DrawEllipse(Pen, m_a.X, m_a.Y, w, h)
+            g.DrawArc(Pen, m_a.X, m_a.Y, 100, 100, 0, 90)
+
         End Using
+
     End Sub
+
 End Class
