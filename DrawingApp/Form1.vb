@@ -3,7 +3,7 @@
     Dim m_shapes As New Collection
     Dim c As Color
     Dim w As Integer
-
+    Dim type As String
     Private Sub pictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
         m_Previous = e.Location
         pictureBox1_MouseMove(sender, e)
@@ -12,16 +12,26 @@
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
             Dim d As Object
-            If Type = "Rectangle" Then
+            d = New Square(PictureBox1.Image, m_Previous, e.Location)
+            d.pen = New Pen(c, w)
+            If type = "Square" Then
                 d = New Square(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
             End If
-            If Type = "Circle" Then
+            If type = "Circle" Then
                 d = New Circle(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
             End If
-            If Type = "Arc" Then
+            If type = "Arc" Then
                 d = New Arc(PictureBox1.Image, m_Previous, e.Location)
+                d.pen = New Pen(c, w)
+            End If
+            If type = "Line" Then
+                d = New Line(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
             End If
             m_shapes.Add(d)
@@ -30,8 +40,6 @@
         End If
         'Dim l As New Circle(PictureBox1.Image, m_Previous, e.Location)
         'l.Pen = New Pen(c, w)
-        'l.w = TrackBar2.Value
-        'l.h = TrackBar3.Value
     End Sub
 
     Private Sub pictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
@@ -113,7 +121,7 @@
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        Type = "Rectangle"
+        type = "Square"
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
