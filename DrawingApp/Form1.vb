@@ -34,6 +34,12 @@
                 d = New Line(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
             End If
+            If type = "Polygon" Then
+                d = New Polygon(PictureBox1.Image, m_Previous, e.Location)
+                d.pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+            End If
             m_shapes.Add(d)
             PictureBox1.Invalidate()
             m_Previous = e.Location
@@ -134,5 +140,9 @@
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
         Type = "Line"
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        type = "Polygon"
     End Sub
 End Class
