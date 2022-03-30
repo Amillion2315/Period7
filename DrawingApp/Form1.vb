@@ -40,6 +40,13 @@
                 d.w = TrackBar2.Value
                 d.h = TrackBar3.Value
             End If
+            If type = "N-Gon" Then
+                d = New Ngon(PictureBox1.Image, m_Previous, e.Location)
+                d.pen = New Pen(c, w)
+                d.radius = RadiusTrackbar.Value
+                d.sides = SidesTrackbar.Value
+
+            End If
             m_shapes.Add(d)
             PictureBox1.Invalidate()
             m_Previous = e.Location
@@ -144,5 +151,9 @@
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
         type = "Polygon"
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        type = "N-Gon"
     End Sub
 End Class
