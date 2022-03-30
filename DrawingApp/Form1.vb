@@ -45,7 +45,12 @@
                 d.pen = New Pen(c, w)
                 d.radius = RadiusTrackbar.Value
                 d.sides = SidesTrackbar.Value
-
+            End If
+            If type = "Picture" Then
+                d = New PBox(PictureBox1.Image, m_Previous, e.Location)
+                d.picture = PictureBox2.Image
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
             End If
             m_shapes.Add(d)
             PictureBox1.Invalidate()
@@ -155,5 +160,17 @@
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
         type = "N-Gon"
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        type = "Picture"
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        OpenFileDialog1.ShowDialog()
+    End Sub
+
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+        PictureBox2.Load(OpenFileDialog1.FileName)
     End Sub
 End Class
