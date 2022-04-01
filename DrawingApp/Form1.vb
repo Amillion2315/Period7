@@ -12,8 +12,9 @@
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
             Dim d As Object
-            d = New Square(PictureBox1.Image, m_Previous, e.Location)
+            d = New Line(PictureBox1.Image, m_Previous, e.Location)
             d.pen = New Pen(c, w)
+            d.xspeed = xSpeedTrackBar.Value
             If type = "Square" Then
                 d = New Square(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
@@ -33,6 +34,7 @@
             If type = "Line" Then
                 d = New Line(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
+                d.xspeed = xspeedtrackbar.value
             End If
             If type = "Polygon" Then
                 d = New Polygon(PictureBox1.Image, m_Previous, e.Location)
@@ -78,6 +80,9 @@
         For Each s As Object In m_shapes
             s.Draw()
         Next
+        If (CheckBox1.Checked) Then
+            Refresh()
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

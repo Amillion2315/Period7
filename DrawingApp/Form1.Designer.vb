@@ -53,6 +53,8 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.xSpeedTrackBar = New System.Windows.Forms.TrackBar()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +62,7 @@ Partial Class Form1
         CType(Me.SidesTrackbar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadiusTrackbar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.xSpeedTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -319,11 +322,31 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'xSpeedTrackBar
+        '
+        Me.xSpeedTrackBar.Location = New System.Drawing.Point(694, 463)
+        Me.xSpeedTrackBar.Minimum = -10
+        Me.xSpeedTrackBar.Name = "xSpeedTrackBar"
+        Me.xSpeedTrackBar.Size = New System.Drawing.Size(304, 45)
+        Me.xSpeedTrackBar.TabIndex = 28
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(867, 427)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(85, 17)
+        Me.CheckBox1.TabIndex = 29
+        Me.CheckBox1.Text = "AutoRefresh"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1107, 592)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.xSpeedTrackBar)
         Me.Controls.Add(Me.Button17)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label3)
@@ -361,6 +384,7 @@ Partial Class Form1
         CType(Me.SidesTrackbar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadiusTrackbar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.xSpeedTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -397,4 +421,6 @@ Partial Class Form1
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Button17 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents xSpeedTrackBar As TrackBar
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
