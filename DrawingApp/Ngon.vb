@@ -2,7 +2,9 @@
     Public Property Pen As Pen
     Public Property Sides As Integer
     Public Property Radius As Integer
-
+    Public Property color1 As Color
+    Public Property color2 As Color
+    Public Property fill As Boolean
     Dim m_image As Image
     Dim m_a As Point
     Dim m_b As Point
@@ -25,6 +27,15 @@
             points(index) = New Point(m_a.X + x, m_a.Y + y)
         Next
         Using g As Graphics = Graphics.FromImage(m_image)
+            If Fill Then
+                Dim lingrbrush As Drawing.Drawing2D.LinearGradientBrush
+                lingrbrush = New Drawing.Drawing2D.LinearGradientBrush(
+                                    New Point(0, 10),
+                                    New Point(200, 10),
+                                    Color1,
+                                    Color2)
+                g.FillPolygon(lingrbrush, points)
+            End If
             g.DrawPolygon(Pen, points)
         End Using
 

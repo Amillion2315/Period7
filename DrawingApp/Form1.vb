@@ -20,33 +20,53 @@
                 d.pen = New Pen(c, w)
                 d.w = TrackBar2.Value
                 d.h = TrackBar3.Value
+                d.fill = CheckBox2.Checked
+                d.color1 = c
+                d.color1 = Button6.BackColor
+                d.color2 = Button9.BackColor
             End If
             If type = "Circle" Then
                 d = New Circle(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
                 d.w = TrackBar2.Value
                 d.h = TrackBar3.Value
+                d.fill = CheckBox2.Checked
+                d.color1 = c
+                d.color1 = Button6.BackColor
+                d.color2 = Button9.BackColor
             End If
             If type = "Arc" Then
                 d = New Arc(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
+                d.fill = CheckBox2.Checked
+                d.color1 = c
+                d.color1 = Button6.BackColor
+                d.color2 = Button9.BackColor
             End If
             If type = "Line" Then
                 d = New Line(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
-                d.xspeed = xspeedtrackbar.value
+                d.xspeed = xSpeedTrackBar.Value
             End If
             If type = "Polygon" Then
                 d = New Polygon(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
                 d.w = TrackBar2.Value
                 d.h = TrackBar3.Value
+                d.fill = CheckBox2.Checked
+                d.color1 = c
+                d.color1 = Button6.BackColor
+                d.color2 = Button9.BackColor
             End If
             If type = "N-Gon" Then
                 d = New Ngon(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
                 d.radius = RadiusTrackbar.Value
                 d.sides = SidesTrackbar.Value
+                d.fill = CheckBox2.Checked
+                d.color1 = c
+                d.color1 = Button6.BackColor
+                d.color2 = Button9.BackColor
             End If
             If type = "Picture" Then
                 d = New PBox(PictureBox1.Image, m_Previous, e.Location)
