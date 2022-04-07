@@ -22,7 +22,7 @@
                 d.h = TrackBar3.Value
                 d.fill = CheckBox2.Checked
                 d.color1 = c
-                d.color1 = Button6.BackColor
+                d.color1 = Button2.BackColor
                 d.color2 = Button9.BackColor
             End If
             If type = "Circle" Then
