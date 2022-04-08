@@ -38,10 +38,6 @@
             If type = "Arc" Then
                 d = New Arc(PictureBox1.Image, m_Previous, e.Location)
                 d.pen = New Pen(c, w)
-                d.fill = CheckBox2.Checked
-                d.color1 = c
-                d.color1 = Button6.BackColor
-                d.color2 = Button9.BackColor
             End If
             If type = "Line" Then
                 d = New Line(PictureBox1.Image, m_Previous, e.Location)
@@ -73,6 +69,16 @@
                 d.picture = PictureBox2.Image
                 d.w = TrackBar2.Value
                 d.h = TrackBar3.Value
+            End If
+            If type = "pie" Then
+                d = New Pie(PictureBox1.Image, m_Previous, e.Location)
+                d.pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+                d.fill = CheckBox2.Checked
+                d.color1 = c
+                d.color1 = Button2.BackColor
+                d.color2 = Button9.BackColor
             End If
             m_shapes.Add(d)
             PictureBox1.Invalidate()
@@ -197,5 +203,9 @@
 
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
         PictureBox2.Load(OpenFileDialog1.FileName)
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        type = "pie"
     End Sub
 End Class
